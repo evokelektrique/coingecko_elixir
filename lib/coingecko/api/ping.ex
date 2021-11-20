@@ -1,5 +1,7 @@
 defmodule Coingecko.API.Ping do
+  import Coingecko.API.Base
+
   def ping do
-    {:ok, "exmaple output"}
+    request(:get, "ping")
   end
 end

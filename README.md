@@ -1,21 +1,11 @@
 # Coingecko
+Coingecko API library for Elixir
 
-**TODO: Add description**
+## Available Endpoints
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `coingecko_elixir` to your list of dependencies in `mix.exs`:
-
+**Ping**
 ```elixir
-def deps do
-  [
-    {:coingecko_elixir, "~> 0.1.0"}
-  ]
-end
+iex(1)> Coingecko.ping
+%{gecko_says: "(V3) To the Moon!"}
+
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/coingecko_elixir](https://hexdocs.pm/coingecko_elixir).
-
