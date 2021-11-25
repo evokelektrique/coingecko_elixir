@@ -2,7 +2,15 @@ defmodule CoingeckoTest do
   use ExUnit.Case
   doctest Coingecko
 
-  test "greets the world" do
-    assert Coingecko.hello() == :world
+  setup_all do
+    []
+  end
+
+  test "Ping" do
+    assert Coingecko.ping()
+  end
+
+  test "Categories list" do
+    assert Coingecko.categories_list()
   end
 end
