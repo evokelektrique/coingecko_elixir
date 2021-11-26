@@ -1,7 +1,9 @@
 defmodule Coingecko.API.Category do
   import Coingecko.API.Base
 
+  @endpoint "coins/categories"
+
   def categories_list do
-    request(:get, "coins/categories/list")
+    request(:get, @endpoint <> "/list")
   end
 end
