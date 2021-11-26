@@ -13,5 +13,5 @@ defmodule Coingecko.Behaviour do
   @callback supported_vs_currencies() :: {:ok, term} | {:error, String.t()}
 
   # Coins
-  @callback coins_list() :: {:ok, term} | {:error, String.t()}
+  @callback coins_list(boolean()) :: {:ok, term} | {:error, String.t()}
 end

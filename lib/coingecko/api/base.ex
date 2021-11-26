@@ -3,12 +3,12 @@ defmodule Coingecko.API.Base do
   Provides basic and common functionalities for Coingecko API.
   """
 
-  def request(method, path, headers \\ []) do
-    do_request(method, request_url(path), headers)
+  def request(method, path, options \\ [], headers \\ []) do
+    do_request(method, request_url(path), options, headers)
   end
 
-  defp do_request(method, url, headers, options \\ [parse_result: true]) do
-    case HTTPoison.request(method, url, [], headers) do
+  defp do_request(method, url, options, headers, config \\ [parse_result: true]) do
+    case HTTPoison.request(method, url, [], headers, options) do
       {:error, %HTTPoison.Error{reason: reason}} ->
         raise Coingecko.ConnectionError, reason: reason
 
@@ -16,7 +16,7 @@ defmodule Coingecko.API.Base do
         raise Coingecko.NotFoundError
 
       {:ok, result} ->
-        if Keyword.get(options, :parse_result, true) do
+        if Keyword.get(config, :parse_result, true) do
           parse_result(result)
         else
           result

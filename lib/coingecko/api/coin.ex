@@ -3,7 +3,7 @@ defmodule Coingecko.API.Coin do
 
   @endpoint "coins"
 
-  def coins_list do
-    request(:get, @endpoint <> "/list")
+  def coins_list(include_platform \\ false) do
+    request(:get, @endpoint <> "/list", include_platform: include_platform)
   end
 end

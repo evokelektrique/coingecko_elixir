@@ -27,3 +27,17 @@ iex(1)> Coingecko.categories_list
 iex(1)> Coingecko.supported_vs_currencies
 ["btc", "eth", "ltc", "bch", "bnb", "eos", "xrp", ...]
 ```
+
+**Coins list**
+```elixir
+iex(1)> Coingecko.coins_list
+[
+  %{id: "01coin", name: "01coin", symbol: "zoc"},
+  %{
+    id: "0-5x-long-algorand-token",
+    name: "0.5X Long Algorand Token",
+    symbol: "algohalf"
+  },
+...
+]
+```

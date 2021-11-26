@@ -20,5 +20,5 @@ defmodule Coingecko do
 
   # Coins
   @impl Behaviour
-  defdelegate coins_list, to: Coingecko.API.Coin
+  defdelegate coins_list(include_platform), to: Coingecko.API.Coin
 end
